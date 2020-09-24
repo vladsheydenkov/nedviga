@@ -5,6 +5,9 @@
 #my_secrets - для хранения токена#
 #хранить html в папке templates - они видны везде, для доступа достаточно написать имя файла, путь писать не нужно#
 #в репр миграции пушиться не будут#
+# .gitignore #
+#**/migrations/*
+./my_secrets/secrets.py #
 !!!push in development!!!
 ---Запуск---
 3. python manage.py runserver
