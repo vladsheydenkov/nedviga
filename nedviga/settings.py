@@ -29,9 +29,9 @@ SECRET_KEY = secrets.SECRET_KEY
 # because it will also read in any known environment variables as secret values. 
 # This is quite handy for dynamically spawned instances or CI testing.
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nedviga-app.herokuapp.com/', '127.0.0.1']
 #AUTH_USER_MODEL = 'users.User'
 
 

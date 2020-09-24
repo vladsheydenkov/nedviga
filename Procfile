@@ -1,0 +1,1 @@
+web: gunicorn nedviga.wsgi --log-file -
