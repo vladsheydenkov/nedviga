@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block content %}
+<H1>Результат вашего поиска:</H1>
+{% if search_by_parametrs|length == 0 %}
+    <h3> Ничего не найдено :( </h3>
+{% endif %}
+{% for item in search_by_parametrs %}
+    <li>{{item}}</li>
+
+{% endfor %}
+{% endblock %} 

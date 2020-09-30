@@ -7,6 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    {% block title %}
+    {% endblock %}
    <h1>Hello world!</h1>
+   <form method = "post" action="{% url 'apartments:search_result' %}">
+    {% csrf_token %}
+        <select name="quality">
+            <option value="1">Б\У</option>
+            <option value="0">Новостройка</option>
+        </select>
+        <select name="rooms">
+            <option value="1">1 комнатная </option>
+            <option value="2">2 комнатная </option>
+            <option value="3">3 комнатная</option>
+            <option value="4">4 комнатная</option>
+            <option value="5">5 комнатная</option>
+            <option value="big">6 и более комнатная</option>
+        </select>
+        <input type='text' name="price" placeholder="Цена"/>
+        <input  type = "submit" value="Submit"/>
+    </form>
+    {% block content%}
+    {% endblock %}
 </body>
 </html>

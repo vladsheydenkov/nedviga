@@ -10,3 +10,6 @@ class ProfileUser(models.Model):
     photo = models.ImageField(upload_to='user/%Y/%m/%d', blank=True)
     first_name = models.CharField(max_length=90, blank=True)
     last_name = models.CharField(max_length=90, blank=True)
+
+
+
