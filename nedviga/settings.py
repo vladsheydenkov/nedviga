@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'apartments.apps.ApartmentsConfig',
     'auction.apps.AuctionConfig',
+
 ]
 
 MIDDLEWARE = [

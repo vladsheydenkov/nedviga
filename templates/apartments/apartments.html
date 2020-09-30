@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Apartments list {% endblock %}
+
+{% block content %}
+    <h1>Available houses</h1>
+    {% for apartment in apartments %}
+        <h2>{{ apartment.title }}</h2>
+        <p>
+            {{ apartment.body|truncatewords:5|linebreaks }}
+        </p>
+         Author {{ apartment.author }}
+         Data {{ apartment.publish }}
+    {% endfor %}
+
+{% endblock %}
