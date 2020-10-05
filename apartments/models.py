@@ -19,7 +19,7 @@ class Apartments(models.Model):
     address = models.CharField(max_length=225,blank=False)
     description = models.TextField(blank=True)
     updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=True) # не применились почему-то
+    created = models.DateTimeField(auto_now_add=True) 
     # author = models.ForeignKey(User,
     #                            on_delete=models.CASCADE,
     #                            related_name='user_apartments')
