@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Apartments
+from django.shortcuts import get_object_or_404
+
 from . import forms
 
 
@@ -11,15 +13,15 @@ def index(request):
 
 def search_appartments(request):
 
-    quality, rooms,price = request.POST['quality'], request.POST['rooms'], request.POST['price']
+    quality, rooms, price = request.POST['quality'], request.POST['rooms'], request.POST['price']
 
-    try: #  ignore blank/wrong price
+    try:  # ignore blank/wrong price
         int(price)
         search_by_parametrs = Apartments.objects.filter(quality=quality).filter(rooms=rooms).filter(price__lte=price).all()
     except ValueError:
         search_by_parametrs = Apartments.objects.filter(quality=quality).filter(rooms=rooms).all()
 
-    return  render (request, 'search_result.html', {'search_by_parametrs':search_by_parametrs})
+    return render(request, 'search_result.html', {'search_by_parametrs': search_by_parametrs})
 
     
 # def create_ad(request): # для добавления объявлений с сайта
@@ -27,3 +29,10 @@ def search_appartments(request):
 #         if ad_form.is_valid():
 #         new_ad = ad_form.save()
 #                 apartments = Apartments.objects.create(*)
+
+
+def apartment_detail(request, apartments_id):
+    apartment = get_object_or_404(Apartments, id=apartments_id)
+    return render(request,
+                  'detail.html',
+                  {'apartment': apartment})

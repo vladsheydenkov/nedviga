@@ -1,0 +1,10 @@
+{% block title %} Квартира по адресу  {{ apartment.address }} {% endblock %}
+{% block content %}
+
+    <h1>{{ apartment.description }}</h1>
+
+        <a href="{% url "apartments:index"  %}">
+            back to search
+        </a>
+    </p>
+{% endblock %}
